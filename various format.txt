@@ -1,0 +1,30 @@
+Pandas, PySpark, and PySpark SQL provide different methods to read various file formats. Here are examples of how to read common file formats using each library:
+
+Pandas:
+Pandas offers a wide range of file readers for various formats. Some common methods include:
+
+CSV: Use pd.read_csv('your_file.csv').
+Excel: Use pd.read_excel('your_file.xlsx').
+JSON: Use pd.read_json('your_file.json').
+Parquet: Use pd.read_parquet('your_file.parquet').
+SQL Database: Use pd.read_sql('SELECT * FROM your_table', connection).
+Additionally, Pandas supports reading HTML, XML, SAS, Stata, HDF5, and many other formats. Refer to the Pandas documentation for specific file readers and their options.
+
+PySpark:
+PySpark provides versatile file readers through the spark.read module. Here are some examples:
+
+CSV: Use spark.read.csv('your_file.csv').
+Excel: Use spark.read.format('com.crealytics.spark.excel').load('your_file.xlsx'). (Requires additional package)
+JSON: Use spark.read.json('your_file.json').
+Parquet: Use spark.read.parquet('your_file.parquet').
+Avro: Use spark.read.format('avro').load('your_file.avro').
+PySpark also supports reading from databases using JDBC, reading from text files, ORC files, and more. The available formats may
+ vary depending on the configuration and additional packages in your PySpark environment.
+
+PySpark SQL:
+PySpark SQL, being an extension of PySpark, provides similar file readers as PySpark. You can use the same methods
+ mentioned above for PySpark to read various file formats. Additionally, you can also utilize Spark SQL's capabilities to directly query data from databases using SQL syntax.
+
+Remember to replace 'your_file.extension' with the actual path and filename of the file you want to read. Each library may 
+offer additional options and parameters to customize the file reading process. Refer to the documentation for detailed usage
+ and options specific to the file formats you are working with.
